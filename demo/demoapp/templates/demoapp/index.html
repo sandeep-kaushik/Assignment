@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+<head>
+    {% load crispy_forms_tags %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+
+<h1>Expense Form!</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form|crispy }}
+    <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
+
+</body>
+</html>

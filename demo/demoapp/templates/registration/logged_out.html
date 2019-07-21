@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+<body>
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="alert alert-info">
+  <strong>Logged Out!</strong> You have successfully logged out
+</div>
+
+
+<a href="/" class="btn pull-right btn-primary ">login again</a>
+
+{% endblock %}
+
+
+</body>
+</html>

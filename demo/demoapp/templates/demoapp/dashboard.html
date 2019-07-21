@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'base.html' %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<h1>Dashboard!</h1>
+<a href="/" class="btn pull-right btn-primary ">Add Expense</a>
+<br>
+<br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">expense_amount</th>
+      <th scope="col">desciption</th>
+      <th scope="col">created_date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for expense in expenses %}
+    <tr>
+      <td>{{ expense }}</td>
+      <td>{{ expense.expense_amount }}</td>
+      <td>{{ expense.desciption }}</td>
+      <td>{{ expense.created_date }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<br>
+
+<h2>Total Expense Per  Person</h2>
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">user_id</th>
+      <th scope="col">total_expense_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for person in expenses_per_person %}
+    <tr>
+      <td>{{ person.user }}</td>
+      <td>{{ person.expense_amount__sum }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}
+
+</body>
+</html>
